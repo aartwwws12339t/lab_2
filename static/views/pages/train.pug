@@ -1,0 +1,62 @@
+extends ../layout.pug
+
+block prepend styles
+    link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+
+    div(class='breadcrumb')
+        li= title
+    form(id='drop-form' name='drop-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Drop
+    form(id='delete-form' name='delete-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='Id_id') Id
+            div(class='col-md-9')
+                input(id='Id_id' name='Id_name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Delete
+    form(id='edit-form' name='edit-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='name_name') Name
+            div(class='col-md-9')
+                input(id='name_name' name='name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='route') Route
+            div(class='col-md-9')
+                input(id='ed-route' name='route' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='name') Id
+            div(class='col-md-9')
+                input(id='Id_name' name='Id_name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Edit
+    form(id='shop-add-form' name='shop-add-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='name') Name
+            div(class='col-md-9')
+                input(id='name' name='name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='route') Route
+            div(class='col-md-9')
+                input(id='route' name='route' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Create
+        div.list-wrapper
+            table(id='train-list')
+
+block append scripts
+    script(src='/static/js/models/train.js')
+    script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+    script(src='/static/js/views/train.js')

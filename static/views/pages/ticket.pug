@@ -1,0 +1,90 @@
+extends ../layout.pug
+
+block prepend styles
+    link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+
+    div(class='breadcrumb')
+        li= title
+    form(id='drop-form' name='drop-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Drop
+    form(id='delete-form' name='delete-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='Id_id') Id
+            div(class='col-md-9')
+                input(id='Id_id' name='Id_name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Delete
+    form(id='edit-form' name='edit-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='route') Route
+            div(class='col-md-9')
+                input(id='route' name='route' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='date') Date
+            div(class='col-md-9')
+                input(id='date_name' name='date' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='train') Train
+            div(class='col-md-9')
+                input(id='train_name' name='train' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='price') Price
+            div(class='col-md-9')
+                input(id='price' name='price' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='Id_name') Id
+            div(class='col-md-9')
+                input(id='Id_name' name='Id_name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Edit
+    form(id='shop-add-form' name='shop-add-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='route') Route
+            div(class='col-md-9')
+                input(id='route_c' name='route' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='date') Date
+            div(class='col-md-9')
+                input(id='date' name='date' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='train') train
+            div(class='col-md-9')
+                input(id='train' name='train' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='price_c') Price
+            div(class='col-md-9')
+                input(id='price_c' name='price' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Create
+        div.list-wrapper
+            table(id='tick-list')
+    form(id='report-form' name='report-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Report most common route
+    form(id='report2-form' name='report-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Report routes without sold tickets
+
+block append scripts
+    script(src='/static/js/models/ticket.js')
+    script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+    script(src='/static/js/views/ticket.js')
